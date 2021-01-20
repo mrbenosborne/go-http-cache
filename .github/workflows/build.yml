@@ -19,10 +19,10 @@ jobs:
 
       - name: Build :latest
         if: success()
-        run: docker build -t docker.pkg.github.com/${{ github.repository }}/go-http-cache:latest .
+        run: docker build -t docker.pkg.github.com/${{ github.repository }}:latest .
 
       - name: Push to docker hub :latest
         if: success()
         uses: actions-hub/docker@master
         with:
-          args: push docker.pkg.github.com/mrbenosborne/${{ github.repository }}/go-http-cache:latest
+          args: push docker.pkg.github.com/${{ github.repository }}:latest
